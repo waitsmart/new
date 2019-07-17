@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>11111</button>
+	<button>22222</button>
+	<button>33333</button>
+	<button>44444</button>
+	<button>55555</button>
+</body>
+</html>
+
+
+<script>
+
+//闭包  给一个函数封装一个专属的方法，别人都动不了
+var btns = document.getElementsByTagName("button")
+var i=0
+for(var btn of btns){
+	i++;
+	btn.onclick=(function(i){
+		return function(){
+			alert(i)
+		}
+	})(i)
+}
+
+
+var a = 10;
+function foo() {
+    console.log(a); // ??
+    var a = 20;
+}
+foo();
+
+var a = 10;
+function foo() {
+    console.log(a); // ??
+    let a = 20;
+}
+foo();   
+</script>
